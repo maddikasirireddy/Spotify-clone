@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "album": "After Hours",
+    "coverImage": "https://picsum.photos/seed/blinding/300/300",
+    "duration": 200,
+    "genre": "Pop"
+  },
+  {
+    "id": 2,
+    "title": "Stay",
+    "artist": "The Kid LAROI, Justin Bieber",
+    "album": "F*CK LOVE 3",
+    "coverImage": "https://picsum.photos/seed/stay/300/300",
+    "duration": 141,
+    "genre": "Pop"
+  },
+  {
+    "id": 3,
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "album": "Future Nostalgia",
+    "coverImage": "https://picsum.photos/seed/levitate/300/300",
+    "duration": 203,
+    "genre": "Pop"
+  },
+  {
+    "id": 4,
+    "title": "Peaches",
+    "artist": "Justin Bieber",
+    "album": "Justice",
+    "coverImage": "https://picsum.photos/seed/peaches/300/300",
+    "duration": 198,
+    "genre": "Chill"
+  },
+  {
+    "id": 5,
+    "title": "good 4 u",
+    "artist": "Olivia Rodrigo",
+    "album": "SOUR",
+    "coverImage": "https://picsum.photos/seed/good4u/300/300",
+    "duration": 178,
+    "genre": "Pop"
+  },
+  {
+    "id": 6,
+    "title": "Montero",
+    "artist": "Lil Nas X",
+    "album": "Montero",
+    "coverImage": "https://picsum.photos/seed/montero/300/300",
+    "duration": 137,
+    "genre": "Hip-Hop"
+  },
+  {
+    "id": 7,
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "album": "Dreamland",
+    "coverImage": "https://picsum.photos/seed/heatwaves/300/300",
+    "duration": 238,
+    "genre": "Chill"
+  },
+  {
+    "id": 8,
+    "title": "Easy On Me",
+    "artist": "Adele",
+    "album": "30",
+    "coverImage": "https://picsum.photos/seed/easyon/300/300",
+    "duration": 224,
+    "genre": "Chill"
+  }
+]
