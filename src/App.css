@@ -1,0 +1,24 @@
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--black);
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  gap: 8px;
+  padding: 8px;
+  padding-top: 0;
+}
+
+.app-main {
+  flex: 1;
+  background: var(--bg-base);
+  border-radius: var(--radius-lg);
+  overflow-y: auto;
+  margin-left: 0;
+  transition: margin-left var(--transition);
+}
