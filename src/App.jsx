@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar'
 import PlayerBar from './components/PlayerBar/PlayerBar'
@@ -16,6 +17,8 @@ function App() {
   // Tracks the currently playing song for the PlayerBar
   const [currentSong, setCurrentSong] = useState(null)
 
+  const navigate = useNavigate()
+
   // Toggles the sidebar open/closed state
   function handleToggleSidebar() {
     setIsSidebarOpen(prev => !prev)
@@ -25,11 +28,13 @@ function App() {
   function handleSelectSong(song) {
     setSelectedSong(song)
     setCurrentSong(song)
+    navigate(`/song/${song.id}`)
   }
 
   // Resets the view to Home by clearing the selected song
   function handleGoHome() {
     setSelectedSong(null)
+    navigate('/')
   }
 
   return (
@@ -40,16 +45,41 @@ function App() {
         <Sidebar isOpen={isSidebarOpen} onGoHome={handleGoHome} />
 
         <main className={`app-main ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-          {/* Conditional rendering based on whether a song is selected */}
-          {selectedSong === null ? (
-            <Home onSelectSong={handleSelectSong} currentSong={currentSong} />
-          ) : (
-            <SongDetail
-              selectedSong={selectedSong}
-              onGoBack={handleGoHome}
-              onSelectSong={handleSelectSong}
+          <Routes>
+            <Route 
+              path="/" 
+              element={<Home onSelectSong={handleSelectSong} currentSong={currentSong} />} 
             />
-          )}
+            <Route 
+              path="/song/:id" 
+              element={
+                selectedSong ? (
+                  <SongDetail
+                    selectedSong={selectedSong}
+                    onGoBack={handleGoHome}
+                    onSelectSong={handleSelectSong}
+                  />
+                ) : (
+                  <div style={{ color: 'white', padding: '2rem', textAlign: 'center' }}>
+                    <h2>Song not found</h2>
+                    <button 
+                      onClick={handleGoHome}
+                      style={{ 
+                        marginTop: '1rem', 
+                        padding: '0.5rem 1rem', 
+                        background: 'var(--green)', 
+                        color: 'black', 
+                        borderRadius: '20px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      Go Home
+                    </button>
+                  </div>
+                )
+              } 
+            />
+          </Routes>
         </main>
       </div>
 
