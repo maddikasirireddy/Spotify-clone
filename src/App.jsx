@@ -7,27 +7,27 @@ import SongDetail from './components/SongDetail/SongDetail'
 import './App.css'
 
 function App() {
-  // Sidebar open/close state
+  // State for sidebar visibility
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
-  // Which song is selected (determines which page renders)
+  // Tracks the currently selected song for the detail view
   const [selectedSong, setSelectedSong] = useState(null)
 
-  // Currently playing song (shown in PlayerBar)
+  // Tracks the currently playing song for the PlayerBar
   const [currentSong, setCurrentSong] = useState(null)
 
-  // Toggle sidebar
+  // Toggles the sidebar open/closed state
   function handleToggleSidebar() {
     setIsSidebarOpen(prev => !prev)
   }
 
-  // Called when a SongCard is clicked
+  // Updates both selected and currently playing song when a card is clicked
   function handleSelectSong(song) {
     setSelectedSong(song)
     setCurrentSong(song)
   }
 
-  // Go back to home view
+  // Resets the view to Home by clearing the selected song
   function handleGoHome() {
     setSelectedSong(null)
   }
@@ -40,6 +40,7 @@ function App() {
         <Sidebar isOpen={isSidebarOpen} onGoHome={handleGoHome} />
 
         <main className={`app-main ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+          {/* Conditional rendering based on whether a song is selected */}
           {selectedSong === null ? (
             <Home onSelectSong={handleSelectSong} currentSong={currentSong} />
           ) : (
@@ -58,3 +59,4 @@ function App() {
 }
 
 export default App
+```
