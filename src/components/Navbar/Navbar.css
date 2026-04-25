@@ -51,10 +51,12 @@
 .hamburger.open span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
+
 .hamburger.open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
@@ -85,7 +87,7 @@
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   color: var(--text-base);
   transition: background var(--transition), opacity var(--transition);
 }
@@ -168,4 +170,34 @@
 .search-input::placeholder {
   color: var(--text-subdued);
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .navbar-search {
+    width: auto;
+    flex: 1;
+    margin-right: 8px;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar-user-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-search {
+    display: none;
+  }
+
+  .navbar-logo {
+    gap: 0;
+  }
+
+  .navbar-user-btn {
+    padding: 4px;
+  }
 }

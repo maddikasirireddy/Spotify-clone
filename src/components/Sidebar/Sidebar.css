@@ -7,8 +7,8 @@
   display: flex;
   flex-direction: column;
   transition: width 0.3s cubic-bezier(0.3, 0, 0.4, 1),
-              min-width 0.3s cubic-bezier(0.3, 0, 0.4, 1),
-              opacity 0.2s ease;
+    min-width 0.3s cubic-bezier(0.3, 0, 0.4, 1),
+    opacity 0.2s ease;
   flex-shrink: 0;
 }
 
@@ -57,7 +57,7 @@
 
 .sidebar-nav-item:hover {
   color: var(--text-base);
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .sidebar-nav-icon {
@@ -109,7 +109,7 @@
 
 .sidebar-add-btn:hover {
   color: var(--text-base);
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .sidebar-library-list {
@@ -131,7 +131,7 @@
 }
 
 .sidebar-library-item:hover {
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .library-item-cover {
@@ -166,4 +166,16 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    height: calc(100vh - var(--navbar-height) - var(--player-height));
+    z-index: 150;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.8);
+    background: var(--black);
+    left: 0;
+    top: var(--navbar-height);
+  }
 }

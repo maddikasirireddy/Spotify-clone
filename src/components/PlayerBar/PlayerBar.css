@@ -26,7 +26,7 @@
   border-radius: var(--radius-sm);
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .player-cover img {
@@ -150,7 +150,7 @@
   flex: 1;
   height: 4px;
   border-radius: 2px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   outline: none;
 }
@@ -168,7 +168,7 @@
 
 .progress-slider:hover,
 .volume-slider:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .progress-slider:hover::-webkit-slider-thumb,
@@ -189,4 +189,61 @@
 .volume-slider {
   width: 90px;
   flex: none;
+}
+
+@media (max-width: 768px) {
+  .player-right {
+    display: none;
+  }
+
+  .player-bar {
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .player-left {
+    min-width: 120px;
+  }
+
+  .player-cover {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-left {
+    min-width: auto;
+    flex: 2;
+    gap: 8px;
+  }
+
+  .player-center {
+    flex: 3;
+    gap: 4px;
+  }
+
+  .player-song-info {
+    max-width: 100px;
+  }
+
+  .player-controls {
+    gap: 8px;
+  }
+
+  .play-pause-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ctrl-btn:not(.play-pause-btn) {
+    display: none;
+    /* Hide secondary controls like skip on very small screens, or we can just keep previous/next */
+  }
+
+  .ctrl-btn:nth-child(2),
+  .ctrl-btn:nth-child(4) {
+    display: flex;
+    /* Keep previous and next */
+  }
 }

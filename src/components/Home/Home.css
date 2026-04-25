@@ -26,7 +26,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .home-error {
@@ -52,7 +54,7 @@
 .home-hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at top left, rgba(29,185,84,0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse at top left, rgba(29, 185, 84, 0.2) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -86,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   overflow: hidden;
   transition: background var(--transition);
@@ -99,7 +101,7 @@
 }
 
 .quick-pick:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .quick-pick.playing {
@@ -143,7 +145,7 @@
 .home-search-bar:focus-within {
   border-color: var(--text-base);
   background: var(--bg-highlight);
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
 }
 
 .search-icon {
@@ -232,7 +234,38 @@
   .home-quick-picks {
     grid-template-columns: 1fr 1fr;
   }
+
   .songs-grid {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .home-quick-picks {
+    grid-template-columns: 1fr;
+  }
+
+  .songs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+
+  .home-hero {
+    padding: 24px 16px 20px;
+  }
+
+  .home-greeting {
+    font-size: 1.5rem;
+  }
+
+  .home-content {
+    padding: 16px 16px 0;
+  }
+
+  .home-search-wrapper {
+    padding: 16px 16px 8px;
+  }
+
+  .home-section-title {
+    font-size: 1.2rem;
   }
 }

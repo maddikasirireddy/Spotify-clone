@@ -22,3 +22,14 @@
   margin-left: 0;
   transition: margin-left var(--transition);
 }
+
+@media (max-width: 768px) {
+  .app-body {
+    padding: 0;
+    gap: 0;
+  }
+
+  .app-main {
+    border-radius: 0;
+  }
+}
