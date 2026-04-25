@@ -1,0 +1,58 @@
+.song-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-subdued);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.action-btn:hover {
+  color: var(--text-base);
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Like button */
+.like-btn.liked {
+  color: var(--green);
+  border-color: var(--green);
+  background: var(--green-glow);
+}
+
+.like-btn.liked:hover {
+  background: rgba(29,185,84,0.3);
+}
+
+/* Add to playlist */
+.add-btn {
+  background: var(--green);
+  color: var(--black);
+  border-color: var(--green);
+}
+
+.add-btn:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--black);
+}
+
+.add-btn.added {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--black);
+}

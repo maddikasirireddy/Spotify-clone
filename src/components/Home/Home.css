@@ -1,0 +1,238 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-bottom: 32px;
+}
+
+/* Loading */
+.home-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: var(--text-subdued);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--bg-elevated);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.home-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 8px;
+  color: var(--essential-negative);
+  text-align: center;
+  padding: 32px;
+}
+
+/* Hero */
+.home-hero {
+  position: relative;
+  padding: 40px 24px 32px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1a3a1a 0%, var(--bg-base) 100%);
+}
+
+.home-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(29,185,84,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.home-hero-content {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.home-greeting {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-base);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.home-subtitle {
+  color: var(--text-subdued);
+  font-size: 0.9rem;
+}
+
+/* Quick picks */
+.home-quick-picks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  position: relative;
+}
+
+.quick-pick {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: background var(--transition);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-base);
+  padding-right: 16px;
+  cursor: pointer;
+}
+
+.quick-pick:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.quick-pick.playing {
+  background: rgba(29, 185, 84, 0.2);
+}
+
+.quick-pick img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.quick-pick-playing {
+  margin-left: auto;
+  color: var(--green);
+  font-size: 0.75rem;
+}
+
+/* Search Bar */
+.home-search-wrapper {
+  padding: 0 24px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to bottom, var(--bg-base) 80%, transparent);
+  padding-top: 16px;
+}
+
+.home-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-elevated);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-full);
+  padding: 10px 16px;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.home-search-bar:focus-within {
+  border-color: var(--text-base);
+  background: var(--bg-highlight);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+}
+
+.search-icon {
+  color: var(--text-subdued);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.home-search-bar:focus-within .search-icon {
+  color: var(--text-base);
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--text-base);
+  caret-color: var(--green);
+}
+
+.search-input::placeholder {
+  color: var(--text-subdued);
+}
+
+.search-clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--text-subdued);
+  color: var(--black);
+  flex-shrink: 0;
+  transition: background var(--transition), transform 0.15s ease;
+}
+
+.search-clear-btn:hover {
+  background: var(--text-base);
+  transform: scale(1.1);
+}
+
+/* Main content */
+.home-content {
+  padding: 24px 24px 0;
+  flex: 1;
+}
+
+.home-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.home-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-base);
+  letter-spacing: -0.3px;
+}
+
+.home-song-count {
+  font-size: 0.8rem;
+  color: var(--text-subdued);
+}
+
+/* Songs Grid */
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.home-empty {
+  text-align: center;
+  padding: 48px 0;
+  color: var(--text-subdued);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .home-quick-picks {
+    grid-template-columns: 1fr 1fr;
+  }
+  .songs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}

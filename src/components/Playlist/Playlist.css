@@ -1,0 +1,140 @@
+.playlist {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: 32px;
+}
+
+.playlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.playlist-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-base);
+}
+
+.playlist-count {
+  font-size: 0.8rem;
+  color: var(--text-subdued);
+  background: var(--bg-highlight);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.playlist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 0;
+  color: var(--text-subdued);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.playlist-item:hover {
+  background: var(--bg-highlight);
+}
+
+.playlist-item.active {
+  background: var(--bg-press);
+}
+
+.playlist-index {
+  width: 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-subdued);
+  flex-shrink: 0;
+}
+
+.mini-eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+
+.mini-eq span {
+  display: block;
+  width: 2px;
+  background: var(--green);
+  border-radius: 1px;
+  animation: equalize 0.8s ease infinite alternate;
+}
+
+.mini-eq span:nth-child(1) { height: 6px; animation-delay: 0s; }
+.mini-eq span:nth-child(2) { height: 10px; animation-delay: 0.2s; }
+.mini-eq span:nth-child(3) { height: 4px; animation-delay: 0.4s; }
+
+@keyframes equalize {
+  from { transform: scaleY(0.4); }
+  to { transform: scaleY(1.3); }
+}
+
+.playlist-item-cover {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.playlist-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.playlist-item-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-item-title.green {
+  color: var(--green);
+}
+
+.playlist-item-artist {
+  font-size: 0.76rem;
+  color: var(--text-subdued);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-item-duration {
+  font-size: 0.78rem;
+  color: var(--text-subdued);
+  flex-shrink: 0;
+}

@@ -1,0 +1,28 @@
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  color: var(--text-base);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition), transform 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-btn:hover {
+  background: var(--bg-highlight);
+  transform: scale(1.03);
+}
+
+.tab-btn.active {
+  background: var(--text-base);
+  color: var(--black);
+}
