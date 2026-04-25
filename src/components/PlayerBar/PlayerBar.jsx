@@ -2,6 +2,17 @@ import { useState } from 'react'
 import { FiHeart, FiShuffle, FiSkipBack, FiPause, FiPlay, FiSkipForward, FiRepeat, FiList, FiVolume2 } from 'react-icons/fi';
 import './PlayerBar.css'
 
+function AudioVisualizer({ isPlaying }) {
+  return (
+    <div className={`visualizer ${isPlaying ? 'playing' : ''}`}>
+      <span className="bar"></span>
+      <span className="bar"></span>
+      <span className="bar"></span>
+      <span className="bar"></span>
+    </div>
+  )
+}
+
 function PlayerBar({ currentSong }) {
   // Play/pause toggle state
   const [isPlaying, setIsPlaying] = useState(false)
@@ -54,6 +65,7 @@ function PlayerBar({ currentSong }) {
             <button className="player-like-btn" aria-label="Like song">
               <FiHeart size={16} />
             </button>
+            <AudioVisualizer isPlaying={isPlaying} />
           </>
         ) : (
           <div className="player-empty">No song playing</div>
